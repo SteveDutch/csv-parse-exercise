@@ -26,3 +26,6 @@ hs_err_pid*
 #added from me
 .project
 .classpath
+.metadata
+.lock
+

@@ -1,0 +1,10 @@
+PARSE master list file
+-> BufferedReader o.ä.
+-> store in DataClass 
+
+
+
+SEPARATE data into 3 eparate CSV files. Each CSV file contains a list of stufdent of one course (i.e. grouping students by course) students are sorted by grade in descending order. file names = course1.csv, course2.csv, course3.csv
+--> SeparatorClass incl. sorting?
+--> Sort class
+--> WriterClass
