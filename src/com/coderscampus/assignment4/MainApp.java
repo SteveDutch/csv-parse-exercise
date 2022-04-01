@@ -8,7 +8,7 @@ public class MainApp {
 		// TODO Auto-generated method stub
 		// startet den Reader
 		final String filename = "student-master-list.csv";	
-		FileParser studentlist = new FileParser("student-master-list.csv");
+		FileParser studentlist = new FileParser(filename);
 
 	}
 
