@@ -1,6 +1,6 @@
 package com.coderscampus.assignment4;
 
-public class Student {
+public class Student implements Comparable<Student> {
 
 	private Integer studentID = null;
 	private String studentName = null;
@@ -69,6 +69,11 @@ public class Student {
 		correctCourse = correctCourse.replaceAll("\\d", "");
 		setCourse(correctCourse);
 		
+		
+	}
+	@Override
+	public int compareTo(Student that) {
+		return that.grade.compareTo(this.grade);
 		
 	}
 

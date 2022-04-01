@@ -3,6 +3,7 @@ package com.coderscampus.assignment4;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class FileParser {
 	
@@ -56,6 +57,7 @@ public class FileParser {
 			int j = 0;
 			int k = 0;
 			while ((line = fileReader2.readLine()) != null) {
+				// TODO vermutlich kann ich aus den drei Blöcken eine Methode machen...
 				if (line.contains("COMPSCI")) {
 					
 					String[] enrolledStudent = line.split(",");
@@ -88,6 +90,18 @@ public class FileParser {
 			System.out.println(count2);
 			System.out.println(count3);
 			fileReader2.close();
+		}
+		
+		// zeige reihenfolge vorm sortieren
+		for (Student student : course1) {
+			System.out.println(student.getGrade());
+		}
+		// sortieren
+		Arrays.sort(course1);
+		// zeige reihenfolge nachm sortieren
+		System.out.println("_______________________");
+		for (Student student : course1) {
+			System.out.println(student.getGrade());
 		}
 	}
 
