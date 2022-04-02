@@ -98,11 +98,14 @@ public class FileParser {
 		}
 		// sortieren
 		Arrays.sort(course1);
+		Arrays.sort(course2);
+		Arrays.sort(course3);
 		// zeige reihenfolge nachm sortieren
 		System.out.println("_______________________");
 		for (Student student : course1) {
 			System.out.println(student.getGrade());
 		}
+		course1.write("course1");
 	}
 
 
