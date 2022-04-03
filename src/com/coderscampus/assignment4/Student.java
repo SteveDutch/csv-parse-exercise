@@ -1,5 +1,9 @@
 package com.coderscampus.assignment4;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Student implements Comparable<Student> {
 
 	private Integer studentID = null;
@@ -74,6 +78,22 @@ public class Student implements Comparable<Student> {
 	@Override
 	public int compareTo(Student that) {
 		return that.grade.compareTo(this.grade);
+		
+	}
+	public void saveCourse(String outputFile1) throws IOException {
+		BufferedWriter writer = null;
+		System.out.println("writer evoked");
+	
+		try {
+		writer = new BufferedWriter(new FileWriter(outputFile1));
+		writer.write("Student ID,Student Name,Course,Grade");
+		writer.write("\n" + Integer.toString(studentID) + ",");
+		writer.write(studentName + ",");
+		writer.write(course);
+		writer.write(Float.toString(grade));
+		} finally {
+			if (writer != null) writer.close();
+		}
 		
 	}
 

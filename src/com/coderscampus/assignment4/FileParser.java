@@ -105,7 +105,8 @@ public class FileParser {
 		for (Student student : course1) {
 			System.out.println(student.getGrade());
 		}
-		course1.write("course1");
+		course1[2].saveCourse("course1.csv");
+		course1[3].saveCourse("course1.csv");
 	}
 
 
