@@ -85,8 +85,8 @@ public class Student implements Comparable<Student> {
 		System.out.println("writer evoked");
 	
 		try {
-		writer = new BufferedWriter(new FileWriter(outputFile1));
-		writer.write("Student ID,Student Name,Course,Grade");
+		writer = new BufferedWriter(new FileWriter(outputFile1,true));
+		// writer.write("Student ID,Student Name,Course,Grade");
 		writer.write("\n" + Integer.toString(studentID) + ",");
 		writer.write(studentName + ",");
 		writer.write(course);
@@ -96,5 +96,22 @@ public class Student implements Comparable<Student> {
 		}
 		
 	}
+
+	public void makeFile(String outputFile1) throws IOException {
+		BufferedWriter writer = null;
+		System.out.println("filemaker evoked");
+	
+		try {
+		writer = new BufferedWriter(new FileWriter(outputFile1,false));
+		writer.write("Student ID,Student Name,Course,Grade");
+		} finally {
+			if (writer != null) writer.close();
+		}
+		
+	}
+
+
+
+
 
 }

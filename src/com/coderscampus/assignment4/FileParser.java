@@ -105,13 +105,36 @@ public class FileParser {
 		for (Student student : course1) {
 			System.out.println(student.getGrade());
 		}
-		course1[2].saveCourse("course1.csv");
-		course1[3].saveCourse("course1.csv");
-		
+		// course1[2].saveCourse("course1.csv");
+		// course1[3].saveCourse("course1.csv");
+
+
+
+
+
+		course1[0].makeFile("course1.csv");
 		for (Student student : course1) {
 			System.out.println(student.getGrade());
 			student.saveCourse("course1.csv"); //hier muß der filewriter hin, aber: die erste zeile ....
 		}
+		
+		course2[0].makeFile("course2.csv");
+		for (Student student : course2) {
+			System.out.println(student.getGrade());
+			student.saveCourse("course2.csv"); //hier muß der filewriter hin, aber: die erste zeile ....
+		}
+		
+		course3[0].makeFile("course3.csv");
+		for (Student student : course3) {
+			System.out.println(student.getGrade());
+			student.saveCourse("course3.csv"); //hier muß der filewriter hin, aber: die erste zeile ....
+		}
+		
+		
+		
+		
+		
+		
 	}
 
 
