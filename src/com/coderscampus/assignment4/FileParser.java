@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class FileParser {
 
@@ -79,10 +80,10 @@ public class FileParser {
 			fileReader2.close();
 		}
 
-		// sortieren - sort
-		Arrays.sort(course1);
-		Arrays.sort(course2);
-		Arrays.sort(course3);
+		// sortieren - sort, incl handling of a potential null value
+		Arrays.sort(course1, Comparator.nullsLast(null));
+		Arrays.sort(course2, Comparator.nullsLast(null));
+		Arrays.sort(course3, Comparator.nullsLast(null));
 
 		course1[0].makeFile("course1.csv");
 		for (Student student : course1) {
@@ -103,5 +104,15 @@ public class FileParser {
 		}
 
 	}
+
+//	public void checkForNullValue(Student[] courseList) {
+//		for (Student student : courseList) {
+//
+//			if (student.equals(null)) {
+//				System.out.println("Oopsi, here's a NULL value :o");
+//				break;
+//			}
+//		}
+//	}
 
 }
