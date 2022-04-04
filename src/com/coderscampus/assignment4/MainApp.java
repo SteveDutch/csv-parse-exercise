@@ -9,7 +9,7 @@ public class MainApp {
 		// startet den Reader
 		final String filename = "student-master-list.csv";	
 		FileParser studentlist = new FileParser(filename);
-		final String outputFile1 = "course1.csv";
+		// final String outputFile1 = "course1.csv";
 
 	}
 
