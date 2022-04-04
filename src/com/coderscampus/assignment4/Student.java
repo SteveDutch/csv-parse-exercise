@@ -18,13 +18,13 @@ public class Student implements Comparable<Student> {
 		this.course = course;
 		this.grade = grade;
 	}
+
 	public Student(String[] array) {
 		this.studentID = Integer.parseInt(array[0]);
-		this.studentName =array[1];
+		this.studentName = array[1];
 		this.course = array[2];
 		this.grade = Float.parseFloat(array[3]);
 	}
-	
 
 // setter & getter 
 	public Integer getStudentID() {
@@ -58,60 +58,58 @@ public class Student implements Comparable<Student> {
 	public void setGrade(Float grade) {
 		this.grade = grade;
 	}
-	// thanks to 
+
+	// thanks to
 //	https://stackoverflow.com/questions/1903252/extract-integer-part-in-string#1903649
 //	for the regex part	
 	public void correctStudentCourseAndGrade() {
-		//returns digits
+		// returns digits
 		String extractGrade = getCourse().replaceAll("[^0-9]", "");
 		Float oldGrade = getGrade();
-		Float correctGrade = oldGrade/100 + Float.parseFloat(extractGrade);
+		Float correctGrade = oldGrade / 100 + Float.parseFloat(extractGrade);
 		setGrade(correctGrade);
-		
-		String correctCourse = 	getCourse();
+
+		String correctCourse = getCourse();
 		// cuts off digits, returns new string
 		correctCourse = correctCourse.replaceAll("\\d", "");
 		setCourse(correctCourse);
-		
-		
+
 	}
+
 	@Override
 	public int compareTo(Student that) {
 		return that.grade.compareTo(this.grade);
-		
+
 	}
+
 	public void saveCourse(String outputFile1) throws IOException {
 		BufferedWriter writer = null;
-		System.out.println("writer evoked");
-	
+
 		try {
-		writer = new BufferedWriter(new FileWriter(outputFile1,true));
-		// writer.write("Student ID,Student Name,Course,Grade");
-		writer.write("\n" + Integer.toString(studentID) + ",");
-		writer.write(studentName + ",");
-		writer.write(course);
-		writer.write(Float.toString(grade));
+			writer = new BufferedWriter(new FileWriter(outputFile1, true));
+
+			writer.write("\n" + Integer.toString(studentID) + ",");
+			writer.write(studentName + ",");
+			writer.write(course);
+			writer.write(Float.toString(grade));
 		} finally {
-			if (writer != null) writer.close();
+			if (writer != null)
+				writer.close();
 		}
-		
+
 	}
 
 	public void makeFile(String outputFile1) throws IOException {
 		BufferedWriter writer = null;
-		System.out.println("filemaker evoked");
-	
+
 		try {
-		writer = new BufferedWriter(new FileWriter(outputFile1,false));
-		writer.write("Student ID,Student Name,Course,Grade");
+			writer = new BufferedWriter(new FileWriter(outputFile1, false));
+			writer.write("Student ID,Student Name,Course,Grade");
 		} finally {
-			if (writer != null) writer.close();
+			if (writer != null)
+				writer.close();
 		}
-		
+
 	}
-
-
-
-
 
 }

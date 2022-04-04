@@ -6,7 +6,7 @@ public class StudentService {
 		String extractGrade = student.getCourse().replaceAll("[^0-9]", "");
 		Float correctGrade = Float.parseFloat(extractGrade) + student.getGrade() / 100;
 		student.setGrade(correctGrade);
-		
+		System.out.println("is this used?");
 	}
 }
 	
