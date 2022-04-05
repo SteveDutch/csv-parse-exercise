@@ -36,7 +36,6 @@ public class FileParser {
 			}
 
 		} finally {
-			System.out.println("\nClosing file reader");
 
 			fileReader.close();
 		}
@@ -75,7 +74,6 @@ public class FileParser {
 			}
 
 		} finally {
-			System.out.println("\nClosing file reader No 2");
 
 			fileReader2.close();
 		}
@@ -104,15 +102,5 @@ public class FileParser {
 		}
 
 	}
-
-//	public void checkForNullValue(Student[] courseList) {
-//		for (Student student : courseList) {
-//
-//			if (student.equals(null)) {
-//				System.out.println("Oopsi, here's a NULL value :o");
-//				break;
-//			}
-//		}
-//	}
 
 }

@@ -112,14 +112,4 @@ public class Student implements Comparable<Student> {
 
 	}
 
-//	public void checkForNullValue(Student[] courseList) {
-//		for (Student student : courseList) {
-//
-//			if (student.equals(null)) {
-//				System.out.println("Oopsi, here's a NULL value :o");
-//				break;
-//			}
-//		}
-//	}
-
 }
