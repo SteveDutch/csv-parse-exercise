@@ -78,7 +78,10 @@ public class Student implements Comparable<Student> {
 
 	@Override
 	public int compareTo(Student that) {
-		return that.grade.compareTo(this.grade);
+		if (that.getGrade() == null) {
+			return -1;
+		}
+		return that.getGrade().compareTo(this.getGrade());
 
 	}
 
@@ -90,7 +93,7 @@ public class Student implements Comparable<Student> {
 
 			writer.write("\n" + Integer.toString(studentID) + ",");
 			writer.write(studentName + ",");
-			writer.write(course);
+			writer.write(course + ",");
 			writer.write(Float.toString(grade));
 		} finally {
 			if (writer != null)

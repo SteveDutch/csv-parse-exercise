@@ -29,3 +29,5 @@ hs_err_pid*
 .metadata
 .lock
 *.csv
+/.~lock.course3.csv#
+/.~lock.student-master-list.csv#

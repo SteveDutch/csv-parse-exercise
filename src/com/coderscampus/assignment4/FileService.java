@@ -4,11 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Comparator;
 
-public class FileParser {
+public class FileService {
 
-	public FileParser(String filename) throws IOException {
+	public FileService(String filename) throws IOException {
 
 		BufferedReader fileReader = null;
 		BufferedReader fileReader2 = null;
@@ -79,25 +78,22 @@ public class FileParser {
 		}
 
 		// sortieren - sort, incl handling of a potential null value
-		Arrays.sort(course1, Comparator.nullsLast(null));
-		Arrays.sort(course2, Comparator.nullsLast(null));
-		Arrays.sort(course3, Comparator.nullsLast(null));
+		Arrays.sort(course1);
+		Arrays.sort(course2);
+		Arrays.sort(course3);
 
 		course1[0].makeFile("course1.csv");
 		for (Student student : course1) {
-
 			student.saveCourse("course1.csv");
 		}
 
 		course2[0].makeFile("course2.csv");
 		for (Student student : course2) {
-
 			student.saveCourse("course2.csv");
 		}
 
 		course3[0].makeFile("course3.csv");
 		for (Student student : course3) {
-
 			student.saveCourse("course3.csv");
 		}
 
