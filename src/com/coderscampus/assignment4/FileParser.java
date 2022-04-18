@@ -75,13 +75,13 @@ public class FileParser {
 
 		} finally {
 
-			fileReader2.close();
+		fileReader2.close();
 		}
 
 		// sortieren - sort, incl handling of a potential null value
-		Arrays.sort(course1, Comparator.nullsLast(null));
-		Arrays.sort(course2, Comparator.nullsLast(null));
-		Arrays.sort(course3, Comparator.nullsLast(null));
+		Arrays.sort(course1, Comparator.nullsLast(Comparator.naturalOrder()));
+		Arrays.sort(course2, Comparator.nullsLast(Comparator.naturalOrder()));
+		Arrays.sort(course3, Comparator.nullsLast(Comparator.naturalOrder()));
 
 		course1[0].makeFile("course1.csv");
 		for (Student student : course1) {
