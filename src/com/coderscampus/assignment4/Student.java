@@ -93,7 +93,11 @@ public class Student implements Comparable<Student> {
 
 			writer.write("\n" + Integer.toString(studentID) + ",");
 			writer.write(studentName + ",");
+<<<<<<< HEAD
 			writer.write(course + ",");
+=======
+			writer.write(course +",");
+>>>>>>> 855c745795217899f9771c1cb7822428d87754b3
 			writer.write(Float.toString(grade));
 		} finally {
 			if (writer != null)

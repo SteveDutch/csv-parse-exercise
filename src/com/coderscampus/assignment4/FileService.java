@@ -74,13 +74,19 @@ public class FileService {
 
 		} finally {
 
-			fileReader2.close();
+		fileReader2.close();
 		}
 
 		// sortieren - sort, incl handling of a potential null value
+<<<<<<< HEAD:src/com/coderscampus/assignment4/FileService.java
 		Arrays.sort(course1);
 		Arrays.sort(course2);
 		Arrays.sort(course3);
+=======
+		Arrays.sort(course1, Comparator.nullsLast(Comparator.naturalOrder()));
+		Arrays.sort(course2, Comparator.nullsLast(Comparator.naturalOrder()));
+		Arrays.sort(course3, Comparator.nullsLast(Comparator.naturalOrder()));
+>>>>>>> 855c745795217899f9771c1cb7822428d87754b3:src/com/coderscampus/assignment4/FileParser.java
 
 		course1[0].makeFile("course1.csv");
 		for (Student student : course1) {
