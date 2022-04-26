@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class FileService {
 
@@ -55,18 +56,18 @@ public class FileService {
 
 					String[] enrolledStudent = line.split(",");
 					course1[i] = new Student(enrolledStudent);
-					course1[i].correctStudentCourseAndGrade();
+					// course1[i].correctStudentCourseAndGrade();
 					i++;
 
 				} else if (line.contains("APMTH")) {
 					String[] enrolledStudent = line.split(",");
 					course2[j] = new Student(enrolledStudent);
-					course2[j].correctStudentCourseAndGrade();
+					// course2[j].correctStudentCourseAndGrade();
 					j++;
 				} else if (line.contains("STAT")) {
 					String[] enrolledStudent = line.split(",");
 					course3[k] = new Student(enrolledStudent);
-					course3[k].correctStudentCourseAndGrade();
+					// course3[k].correctStudentCourseAndGrade();
 					k++;
 				}
 
@@ -78,15 +79,9 @@ public class FileService {
 		}
 
 		// sortieren - sort, incl handling of a potential null value
-<<<<<<< HEAD:src/com/coderscampus/assignment4/FileService.java
-		Arrays.sort(course1);
-		Arrays.sort(course2);
-		Arrays.sort(course3);
-=======
 		Arrays.sort(course1, Comparator.nullsLast(Comparator.naturalOrder()));
 		Arrays.sort(course2, Comparator.nullsLast(Comparator.naturalOrder()));
 		Arrays.sort(course3, Comparator.nullsLast(Comparator.naturalOrder()));
->>>>>>> 855c745795217899f9771c1cb7822428d87754b3:src/com/coderscampus/assignment4/FileParser.java
 
 		course1[0].makeFile("course1.csv");
 		for (Student student : course1) {

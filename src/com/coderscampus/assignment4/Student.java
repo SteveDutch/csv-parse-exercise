@@ -9,9 +9,9 @@ public class Student implements Comparable<Student> {
 	private Integer studentID = null;
 	private String studentName = null;
 	private String course = null;
-	private Float grade = null;
+	private Integer grade = null;
 
-	public Student(Integer studentID, String studentNanme, String course, Float grade) {
+	public Student(Integer studentID, String studentNanme, String course, Integer grade) {
 
 		this.studentID = studentID;
 		this.studentName = studentNanme;
@@ -23,7 +23,7 @@ public class Student implements Comparable<Student> {
 		this.studentID = Integer.parseInt(array[0]);
 		this.studentName = array[1];
 		this.course = array[2];
-		this.grade = Float.parseFloat(array[3]);
+		this.grade = Integer.parseInt(array[3]);
 	}
 
 // setter & getter 
@@ -51,30 +51,32 @@ public class Student implements Comparable<Student> {
 		this.course = course;
 	}
 
-	public Float getGrade() {
+	public Integer getGrade() {
 		return grade;
 	}
 
-	public void setGrade(Float grade) {
+	public void setGrade(Integer grade) {
 		this.grade = grade;
 	}
 
 	// thanks to
 //	https://stackoverflow.com/questions/1903252/extract-integer-part-in-string#1903649
 //	for the regex part	
-	public void correctStudentCourseAndGrade() {
-		// returns digits
-		String extractGrade = getCourse().replaceAll("[^0-9]", "");
-		Float oldGrade = getGrade();
-		Float correctGrade = oldGrade / 100 + Float.parseFloat(extractGrade);
-		setGrade(correctGrade);
-
-		String correctCourse = getCourse();
-		// cuts off digits, returns new string
-		correctCourse = correctCourse.replaceAll("\\d", "");
-		setCourse(correctCourse);
-
-	}
+	/*  --> unnesserary since grade is just an integer 
+	 * 
+	 *Z(and it's course = COMPSCI 310 & grade = 99 intead of courser = COMPSCI & grade = 310,99)
+	 * 
+	 * public void correctStudentCourseAndGrade() { // returns digits String
+	 * extractGrade = getCourse().replaceAll("[^0-9]", ""); Float oldGrade =
+	 * getGrade(); Float correctGrade = oldGrade / 100 +
+	 * Float.parseFloat(extractGrade); setGrade(correctGrade);
+	 * 
+	 * String correctCourse = getCourse(); // cuts off digits, returns new string
+	 * correctCourse = correctCourse.replaceAll("\\d", "");
+	 * setCourse(correctCourse);
+	 * 
+	 * }
+	 */
 
 	@Override
 	public int compareTo(Student that) {
@@ -93,12 +95,8 @@ public class Student implements Comparable<Student> {
 
 			writer.write("\n" + Integer.toString(studentID) + ",");
 			writer.write(studentName + ",");
-<<<<<<< HEAD
 			writer.write(course + ",");
-=======
-			writer.write(course +",");
->>>>>>> 855c745795217899f9771c1cb7822428d87754b3
-			writer.write(Float.toString(grade));
+			writer.write(Integer.toString(grade));
 		} finally {
 			if (writer != null)
 				writer.close();
